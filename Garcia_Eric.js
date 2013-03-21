@@ -6,63 +6,65 @@
 //Story - Wedding
 
 //Variables
+var bride = "Lindsay"
+var groom = "Eric"
 var occation = "wedding";
 var music	 = [];
 
 //json Data
 var guestList = {
 	"guests":[
-		{	guestFirstName: "John",
-			guestLastName: 	"Anderson" 
+		{	firstName: "John",
+			lastName: 	"Anderson" 
 		},
-		{	guestFirstName: "Jane",
-			guestLastName: 	"Anderson" 	
+		{	firstName: "Jane",
+			lastName: 	"Anderson" 	
 		},
-		{	guestFirstName: "Mike",
-			guestLastName: 	"Smith" 	
+		{	firstName: "Mike",
+			lastName: 	"Smith" 	
 		},
-		{	guestFirstName: "Ashley",
-			guestLastName: 	"Smith" 	
+		{	firstName: "Ashley",
+			lastName: 	"Smith" 	
 		},
-		{	guestFirstName: "Jacob",
-			guestLastName: 	"Lopez" 	
+		{	firstName: "Jacob",
+			lastName: 	"Lopez" 	
 		},
-		{	guestFirstName: "Lesly",
-			guestLastName: 	"Lopez" 	
+		{	firstName: "Lesly",
+			lastName: 	"Lopez" 	
 		},
-		{	guestFirstName: "Kane",
-			guestLastName: 	"Sims" 	
+		{	firstName: "Kane",
+			lastName: 	"Sims" 	
 		},
-		{	guestFirstName: "Janet",
-			guestLastName: 	"Sims" 	
+		{	firstName: "Janet",
+			lastName: 	"Sims" 	
 		},
-		{	guestFirstName: "Alberto",
-			guestLastName: 	"Hernandez" 	
+		{	firstName: "Alberto",
+			lastName: 	"Hernandez" 	
 		},
-		{	guestFirstName: "Alicia",
-			guestLastName: 	"Hernandez" 	
+		{	firstName: "Alicia",
+			lastName: 	"Hernandez" 	
 		}
-	]//end guests
-};//end guestList
+	] //end guests
+}; //end guestList
 var bridalParty = {
 	"groomsMen":[
 		{	firstName: 		"John",
-			LastName: 		"Doe",
+			lastName: 		"Doe",
 			isBestMan: 		true
 		},
 		{	firstName: 		"John",
-			LastName: 		"Doe",
+			lastName: 		"Doe",
 			isBestMan: 		false
 		},
 		{	firstName: 		"John",
-			LastName: 		"Doe",
+			lastName: 		"Doe",
 			isBestMan: 		false
 		},
 		{	firstName: 		"John",
-			LastName: 		"Doe",
+			lastName: 		"Doe",
 			isBestMan: 		false
 		}
-	],//ends groomsMen
+	], //ends groomsMen
 	"bridesMades":[
 		{	firstName: 		"Jane",
 			lastName: 		"Doe",
@@ -80,8 +82,8 @@ var bridalParty = {
 			lastName: 		"Doe",
 			isMadeOfHoner: 	false
 		}
-	]//end bridesMades
-};//end bridalParty
+	] //end bridesMades
+}; //end bridalParty
 
 //object
 var food = {
@@ -93,24 +95,32 @@ var food = {
 	"totalCost"	: function(){ //Method: Accessor (Getter)
 		var costOfFood = this.horderves + this.entree + this.kidsMeal + this.cake
 		return costOfFood;
-	},//end totalCost method
+	}, //end totalCost method
 	"otherEntree" : function (alternateEntree){ //Method: Mutator (Setter)
 		this.entree = alternateEntree; 
 	}
 
-};//end food object
+}; //end food object
 
+var totalAttendees = function (){
+
+};
 //Main code
-console.log ( "My future bride and I are planning out our " + occation + ".");
-console.log ( "The estimate cost for food per person is $" + food.totalCost() );
+console.log ( "My future bride (" + bride + ") and I are planning our " + occation + ".");
 
+console.log ( "The estimated cost of food per person is $" + food.totalCost() );
 food.otherEntree(2.40);
-
 console.log ( "With the other entree we liked, it would be $" + food.totalCost());
 
-
-
-
+console.log ( groom + " said, who all are we inviting to the wedding?" )
+var newObj = guestList
+for (var key in newObj.guests){
+	if (newObj.guests[key].firstName == newObj.guests[0].firstName){
+		console.log ( bride + " replied, " + newObj.guests[key].firstName )
+	}else{
+		console.log ( newObj.guests[key].firstName)
+	}
+};
 
 
 
@@ -120,5 +130,6 @@ console.log ( "With the other entree we liked, it would be $" + food.totalCost()
 
 
 //test data
+console.log ( "Test logs" );
 console.log ( guestList );
 console.log ( bridalParty );
