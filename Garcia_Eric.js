@@ -102,6 +102,17 @@ var food = {
 
 }; //end food object
 
+var getWalkingOrder = function (couples){
+	while (couples > 0){
+		couples--
+		if (couples > 0){
+			console.log ("Next couple")
+		}else{
+			console.log ("And now for the bride and groom " + groom + " and " + bride + " Garcia!!!!!")
+		}// if / else
+	}// while loop
+	return couples
+};
 
 //Main code
 console.log ( "My future bride (" + bride + ") and I are planning our " + occasion + ".");
@@ -125,10 +136,7 @@ for (var key in maidOfHonr.bridesMades){
 		console.log ( maidOfHonr.bridesMades[key].firstName + " isn't the Maid of Honor, but is one of the Brides Maids.")
 	}
 }; // end maidOfHonr
-
-var totalAttendees = function (){
-
-};
+var couples = getWalkingOrder(bridalParty)
 
 // Food cost
 console.log ( "The estimated cost of food per person is $" + food.totalCost() );
@@ -145,3 +153,8 @@ for (var key in newObj.guests){
 		console.log ( newObj.guests[key].firstName )
 	}
 };// end newObj
+
+
+
+
+
